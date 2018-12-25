@@ -1,0 +1,18 @@
+﻿/* 外联样式 */
+ul {
+      list-style-type: none; 
+      margin-left: 10px; 
+      /* margin-top: 20px;  */
+}
+.hide {
+      display: none; 
+}
+.box div {
+      float: left; 
+}
+.box {
+       overflow: hidden; 	
+}
+h1 {
+       margin-left: 20px; 
+}

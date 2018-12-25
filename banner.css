@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+   ul {
+    list-style-type: none;
+  } 
+  a {
+    text-decoration: none;
+  } 
+  img {
+    border: none;
+    width:500px;
+    height:500px;
+  } 
+  #tabs {
+    /* margin:0 auto; */
+    overflow: hidden;
+    position: relative;
+    /* background: #000; */
+    width:500px;
+    height:500px;
+  } 
+  #tabs li {
+    float: left;
+  } 
+  #btns {
+    position: absolute;
+    top: 88%;
+    left:120px;
+    z-index: 10;
+  } 
+  #btns li {
+    margin: 10px;
+  } 
+  #btns li a {
+    width: 15px;
+    height: 15px;
+    border-radius:50%;
+    display: block;
+    background: rgba(0,0,0,0.3);
+    border:3px solid gray;
+  }
