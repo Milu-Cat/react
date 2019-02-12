@@ -1,0 +1,8 @@
+/* F12找要修改样式的类名之间修改 */
+.ant-carousel .slick-dots{
+    bottom: 25px;
+}
+.ant-carousel .slick-dots li button{
+       height: 7px;
+       width:40px;
+}

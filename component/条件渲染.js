@@ -77,7 +77,7 @@ class Text extends React.Component {
             < div >
             { this.state.f?<p>welcome</p>:<p>goodby</p>}
             </div>
-        < Btn />
+        < Btn />    
      </div>
     }
 }

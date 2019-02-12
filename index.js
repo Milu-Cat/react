@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import {createStore} from 'redux'
 import { Provider } from 'react-redux'
 
-import { Rate, Icon } from 'antd';  //antd星评
+import { Rate, Icon,Carousel} from 'antd';  //antd星评,轮播
 
 // import $ from 'jquery';
 
@@ -35,7 +35,7 @@ import themeReducer from './component/teacher例子/react-redux/reducer.js'
 import Mycon23 from './component/antd表单1.js'
 
 
-
+import './antd轮播.css'
 
 
 import img from './img/2.jpg'
@@ -106,6 +106,15 @@ ReactDOM.render(
       </div>
       {/* antd星评结束 */}
       
+      {/* antd轮播开始 */}
+      {/* autopla其作用是自动轮播 */}
+      <Carousel autoplay > 
+         <div><h3 style={{background:"red",width:'100%',height:'200px'}}></h3></div>
+         <div><h3 style={{background:"green",width:'100%',height:'200px'}}></h3></div>
+         <div><h3 style={{background:"pink",width:'100%',height:'200px'}}></h3></div>
+         <div><h3 style={{background:"yellow",width:'100%',height:'200px'}}></h3></div>
+     </Carousel>
+     {/* antd轮播结束 */}
 
      {/* 插入一张图片方法一 */}
      <img src={require('./img/1.jpg')}  style={imgstyle}/> 

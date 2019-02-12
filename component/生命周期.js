@@ -29,7 +29,7 @@ class Con extends React.Component{
         //     return true;//重新渲染
         // }
         // console.log()
-        return true
+        return true;
     }
     componentWillUpdate() {
         console.log('componentWillUpdate')
@@ -64,6 +64,7 @@ class Father extends React.Component{
     }
     render() {
         return <div onClick={this.change} title='生命周期'>
+            <h1>生命周期：</h1>
             <Con info={this.state.fa} />
         </div>
     }

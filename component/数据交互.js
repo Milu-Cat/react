@@ -1,5 +1,6 @@
 import React from 'react'
 import $ from 'jquery';
+import { fn } from '_moment@2.23.0@moment';
 //原生js写法
 // class Test extends React.Component{
 //     constructor(props) {
@@ -54,30 +55,70 @@ import $ from 'jquery';
 // export default Test;
 
 //fetch方法
-class Test extends React.Component{
-    constructor(props) {
-        super(props);
-        this.state = {'date':''};
-    }
-    componentDidMount() {
-        fetch('http://localhost:3000/date.json').then(function (res) {
-            return res.json();
-        }).then(function (a) {
-            console.log(a)
-            this.setState({'date':a.one})
-        }.bind(this)).catch(function () {
-            console.log('失败')
-        })
-    }
-    render() {
-        return <div>
-            <h1>数据交互：</h1>
-             数据交互:{this.state.date}
-         </div>
-    }
-}
-export default Test;
+// class Test extends React.Component{
+//     constructor(props) {
+//         super(props);
+//         this.state = {'date':''};
+//     }
+//     componentDidMount() {
+//         fetch('http://localhost:3000/date.json').then(function (res) {
+//             return res.json();
+//         }).then(function (a) {
+//             console.log(a)
+//             this.setState({ 'date': a})
+//             // console.log(this.state.date)
+//         }.bind(this)).catch(function () {
+//             console.log('失败')
+//         })
+//     }
+//     render() {
+//         return <div>
+//             <h1>数据交互：</h1>
+//             数据交互:
+//              {this.state.date.one}
+//          </div>
+//     }
+// } 
+
+// export default Test;
 
 //向服务器传数据
 // fetch('http://localhost:3000/date.php?a=1&b=2',{method:'GET' })
 // fetch('http://localhost:3000/date.php',{body:"{'name':'lily',method:'psot' }"})
+
+
+//fetch列表
+class Text extends React.Component{
+    constructor(props) {
+        super(props);
+        this.state = {
+            "date":''
+        }
+    }
+    componentDidMount() {
+        fetch('http://localhost:3000/date.json').then(function (res) {
+            console.log(res)
+            return res.json();
+           
+        }).then(function (a) {
+            this.setState({
+                 "date":a
+            })
+            // console.log(this.state.date)
+        }.bind(this)).catch(function () {
+             console.log("失败")
+        })
+    }
+    render() {
+        let date1 = this.state.date;
+        let arr = [];
+        for (var i of Object.values(date1)) {
+              arr.push(<li key={i}>{i}</li>)
+        }
+        return <div>
+            <h1>数据交互实现列表：</h1>
+            <ul>{arr}</ul>
+        </div>
+    }
+}
+export default Text;
